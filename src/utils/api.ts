@@ -1,13 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: "https://<seu-domínio>.railway.app",
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
 	headers: {
 		"Content-Type": "application/json",
 	},
 });
 
-// Função para enviar uma pergunta ao backend
 export const enviarPergunta = async (pergunta: string) => {
 	try {
 		const response = await api.post("/api/chat/perguntar", { pergunta });
