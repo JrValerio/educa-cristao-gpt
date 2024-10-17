@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    overflow-wrap: break-word; /* Garante a quebra de palavras em navegadores antigos */
+    word-break: break-word; /* Compatibilidade adicional */
+    max-width: 100%; /* Garante que o texto não ultrapasse a largura do container */
+    -webkit-hyphens: auto; /* Hifeniza automaticamente no Safari */
+    hyphens: auto; /* Hifeniza automaticamente em navegadores compatíveis */
+  }
+
+  @supports (text-wrap: balance) {
+    .text-balance {
+      text-wrap: balance; /* Aplica o balanceamento onde suportado */
+    }
+  }
+}
+
+
+/* src/styles/globals.css */
+
+.markdown h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.markdown p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.markdown ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
