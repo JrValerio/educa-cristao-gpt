@@ -7,11 +7,11 @@ import db from "./db/index.js";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; 
 
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3001", 
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
