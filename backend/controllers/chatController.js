@@ -32,6 +32,8 @@ export const obterResposta = async (req, res) => {
 
       const resposta = response.data.choices[0].message.content.trim();
       respostaCompleta += resposta;
+      
+      console.log("Resposta da OpenAI:", resposta);
 
       console.log("Resposta até o momento:", respostaCompleta);
 
