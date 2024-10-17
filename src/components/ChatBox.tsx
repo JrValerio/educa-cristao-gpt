@@ -1,25 +1,25 @@
 "use client";
 
-import { useState } from 'react';
-import { enviarPergunta } from '../utils/api';
-import ReactMarkdown from 'react-markdown';
+import { useState } from "react";
+import { enviarPergunta } from "../utils/api";
+import ReactMarkdown from "react-markdown";
 
 const ChatBox: React.FC = () => {
-  const [pergunta, setPergunta] = useState('');
-  const [resposta, setResposta] = useState('');
+  const [pergunta, setPergunta] = useState("");
+  const [resposta, setResposta] = useState("");
   const [carregando, setCarregando] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setCarregando(true);
-    setResposta('');
+    setResposta("");
 
     try {
       const respostaDaIa = await enviarPergunta(pergunta);
       setResposta(respostaDaIa);
     } catch (error) {
-      console.error('Erro ao obter resposta da IA:', error);
-      setResposta('Erro ao obter resposta da IA.');
+      console.error("Erro ao obter resposta da IA:", error);
+      setResposta("Erro ao obter resposta da IA.");
     } finally {
       setCarregando(false);
     }
@@ -40,7 +40,7 @@ const ChatBox: React.FC = () => {
           className="bg-blue-500 text-white p-2 rounded"
           disabled={carregando}
         >
-          {carregando ? 'Carregando...' : 'Enviar'}
+          {carregando ? "Carregando..." : "Enviar"}
         </button>
       </form>
 

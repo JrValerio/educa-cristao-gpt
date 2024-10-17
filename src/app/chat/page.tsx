@@ -1,8 +1,8 @@
 // src/app/chat/page.tsx
 "use client";
 
-import type React from 'react';
-import ChatBox from '../../components/ChatBox';
+import type React from "react";
+import ChatBox from "../../components/ChatBox";
 
 const ChatPage: React.FC = () => {
   return (

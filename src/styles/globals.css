@@ -22,22 +22,19 @@ body {
 
 @layer utilities {
   .text-balance {
-    overflow-wrap: break-word; /* Garante a quebra de palavras em navegadores antigos */
-    word-break: break-word; /* Compatibilidade adicional */
-    max-width: 100%; /* Garante que o texto não ultrapasse a largura do container */
-    -webkit-hyphens: auto; /* Hifeniza automaticamente no Safari */
-    hyphens: auto; /* Hifeniza automaticamente em navegadores compatíveis */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 
   @supports (text-wrap: balance) {
     .text-balance {
-      text-wrap: balance; /* Aplica o balanceamento onde suportado */
+      text-wrap: balance;
     }
   }
 }
-
-
-/* src/styles/globals.css */
 
 .markdown h1 {
   font-size: 2rem;
@@ -64,4 +61,3 @@ body {
 .markdown li {
   margin-bottom: 0.5rem;
 }
-

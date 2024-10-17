@@ -1,17 +1,21 @@
-import { DataTypes } from 'sequelize';
-import db from '../db/index.js';
+import { DataTypes } from "sequelize";
+import db from "../db/index.js";
 
-const Interaction = db.define('Interaction', {
-  pergunta: {
-    type: DataTypes.TEXT,
-    allowNull: false,
+const Interaction = db.define(
+  "Interaction",
+  {
+    pergunta: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    resposta: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
   },
-  resposta: {
-    type: DataTypes.TEXT,
-    allowNull: false,
-  },
-}, {
-  timestamps: true, // Adiciona createdAt e updatedAt automaticamente
-});
+  {
+    timestamps: true,
+  }
+);
 
 export default Interaction;
