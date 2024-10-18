@@ -1,17 +1,14 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="pt">
+    <Html>
       <Head>
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' https://fonts.googleapis.com;"
+        <meta 
+          httpEquiv="Content-Security-Policy" 
+          content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;" 
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" />
       </Head>
       <body>
         <Main />
