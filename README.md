@@ -108,11 +108,6 @@
 
 ---
 
-## **Licença**
-Este projeto é de código aberto e está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
-
----
-
 ## **Próximos Passos**
 - Implementar autenticação de usuários.
 - Adicionar funcionalidades de esboço de sermões e estudos.
