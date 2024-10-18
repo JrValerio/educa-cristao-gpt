@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## **EducaCristão GPT**
 
-## Getting Started
+![Screenshot EducaCristão](https://github.com/JrValerio/educa-cristao-gpt/blob/main/public/assets/images/Screenshot%20EducaCrist%C3%A3o.png)
 
-First, run the development server:
+**EducaCristão GPT** é uma aplicação web que utiliza Inteligência Artificial (IA) para fornecer respostas teológicas e bíblicas. O projeto tem como objetivo auxiliar professores de Escola Bíblica Dominical (EBD), pastores, estudantes de teologia e novos convertidos a encontrar respostas rápidas e precisas sobre a Bíblia e doutrinas cristãs, facilitando o estudo e aprimorando o conhecimento teológico.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🌐 **Links do Projeto**
+- **Frontend**: [EducaCristão GPT - Vercel](https://educa-cristao-gpt-eight.vercel.app/)
+- **Backend**: [EducaCristão GPT - Render](https://educa-cristao-gpt.onrender.com)
+- **Repositório no GitHub**: [JrValerio/educa-cristao-gpt](https://github.com/JrValerio/educa-cristao-gpt)
+- **LinkedIn**: [Perfil do Desenvolvedor](https://www.linkedin.com/in/jrvalerio/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Funcionalidades**
+- **Chat com IA GPT**: Permite o envio de perguntas teológicas e bíblicas e fornece respostas elaboradas pela IA (utilizando o modelo GPT da OpenAI).
+- **Interface Intuitiva**: Layout simples e responsivo, otimizado para diferentes dispositivos.
+- **Integração com API OpenAI**: Utiliza o modelo GPT-4 para processar perguntas e fornecer respostas.
+- **Conexão com Banco de Dados**: Armazena as interações no banco de dados PostgreSQL para referência futura.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## **Tecnologias Utilizadas**
+### **Frontend**
+- **Next.js**: Framework React para renderização do lado do servidor e otimização.
+- **Tailwind CSS**: Framework CSS para estilização rápida e eficiente.
+- **Vercel**: Plataforma de hospedagem e deploy do frontend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Backend**
+- **Express.js**: Framework para construção da API REST.
+- **PostgreSQL**: Banco de dados relacional hospedado no Render.
+- **Sequelize**: ORM para modelagem e interação com o banco de dados.
+- **Render**: Plataforma de hospedagem do backend.
+- **OpenAI API**: Utiliza o modelo GPT-4 para processar as perguntas.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## **Como Executar o Projeto Localmente**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Pré-requisitos**
+- **Node.js** instalado (versão 14 ou superior).
+- **PostgreSQL** instalado e configurado.
+- **Conta na OpenAI** para obter a chave da API.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Passos para rodar o projeto**
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/JrValerio/educa-cristao-gpt.git
+   cd educa-cristao-gpt
+   ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configuração do Backend:**
+   - Renomeie o arquivo `.env.example` para `.env`.
+   - Preencha as seguintes variáveis no `.env`:
+
+     ```
+     OPENAI_API_KEY=<sua-chave-da-openai>
+     DATABASE_URL=<sua-url-do-banco-postgresql>
+     FRONTEND_URL=http://localhost:3000
+     PORT=3001
+     ```
+
+4. **Configuração do Frontend:**
+   - No diretório principal, adicione no `.env.local`:
+
+     ```
+     NEXT_PUBLIC_API_URL=http://localhost:3001
+     ```
+
+5. **Execute o backend:**
+
+   ```bash
+   cd backend
+   npm run dev
+   ```
+
+6. **Execute o frontend:**
+
+   ```bash
+   npm run dev
+   ```
+
+7. **Acesse a aplicação:**
+   - Frontend: [http://localhost:3000](http://localhost:3000)
+   - Backend: [http://localhost:3001/api/chat/perguntar](http://localhost:3001/api/chat/perguntar)
+
+---
+
+## **Deploy**
+- **Frontend**: O frontend está hospedado no **Vercel**.
+- **Backend**: O backend está hospedado no **Render**.
+- **Banco de Dados**: O PostgreSQL está hospedado no **Render**.
+
+---
+
+## **Contato**
+- **Desenvolvedor**: [Júnior Valério](https://www.linkedin.com/in/jrvalerio/)
+
+---
+
+## **Licença**
+Este projeto é de código aberto e está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+## **Próximos Passos**
+- Implementar autenticação de usuários.
+- Adicionar funcionalidades de esboço de sermões e estudos.
+- Melhorar a interface para dispositivos móveis.
+- Adicionar sugestões automáticas de leitura bíblica.
+
+---
+
+## **Conclusão**
+O **EducaCristão GPT** é uma solução prática e eficiente para quem busca respostas rápidas e precisas sobre a Bíblia e teologia. Com a integração do GPT-4, ele oferece uma experiência enriquecedora para estudantes, pastores e novos convertidos.
