@@ -32,3 +32,7 @@ app.use("/api/chat", chatRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
+app.get("/", (_, res) => {
+  res.redirect("https://educa-cristao-gpt-eight.vercel.app/");
+});
