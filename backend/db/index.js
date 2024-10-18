@@ -6,7 +6,8 @@ dotenv.config();
 const databaseUrl = process.env.DATABASE_URL;
 
 if (!databaseUrl) {
-  throw new Error("A variável de ambiente DATABASE_URL não foi definida!");
+  console.error("Erro: A variável de ambiente DATABASE_URL não foi definida.");
+  process.exit(1); 
 }
 
 const db = new Sequelize(databaseUrl, {
@@ -14,14 +15,10 @@ const db = new Sequelize(databaseUrl, {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false,
+      rejectUnauthorized: false, 
     },
   },
   logging: false,
 });
-
-db.authenticate()
-  .then(() => console.log("Conectado ao banco de dados com sucesso!"))
-  .catch((err) => console.error("Erro ao conectar ao banco de dados:", err));
 
 export default db;
