@@ -3,12 +3,18 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const db = new Sequelize(process.env.DATABASE_URL, {
+const databaseUrl = process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error("A variável de ambiente DATABASE_URL não foi definida!");
+}
+
+const db = new Sequelize(databaseUrl, {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false, 
+      rejectUnauthorized: false,
     },
   },
   logging: false,
