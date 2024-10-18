@@ -7,6 +7,9 @@ const api = axios.create({
 	},
 });
 
+console.log(process.env.NEXT_PUBLIC_API_URL);
+
+
 export const enviarPergunta = async (pergunta: string) => {
 	try {
 		const response = await api.post("/api/chat/perguntar", { pergunta });

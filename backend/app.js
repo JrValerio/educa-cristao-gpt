@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "https://educa-cristao-gpt-eight.vercel.app/", 
+    origin: "https://educa-cristao-gpt-eight.vercel.app", 
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
