@@ -36,3 +36,7 @@ app.listen(PORT, () => {
 app.get("/", (_, res) => {
   res.redirect("https://educa-cristao-gpt-eight.vercel.app/");
 });
+
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
