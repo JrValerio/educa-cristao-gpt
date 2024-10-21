@@ -29,6 +29,14 @@ db.sync()
 
 app.use("/api/chat", chatRoutes);
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+app.get('/', (req, res) => {
+  res.send('Educa Cristão Backend rodando!');
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
@@ -37,6 +45,4 @@ app.get("/", (_, res) => {
   res.redirect("https://educa-cristao-gpt-eight.vercel.app/");
 });
 
-app.get('/health', (req, res) => {
-  res.status(200).send('OK');
-});
+
